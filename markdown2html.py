@@ -14,4 +14,4 @@ if not os.path.isfile(input_file):
     print(f"Missing {input_file}", file=sys.stderr)
     sys.exit(1)
 
-sys.extit(0)
+sys.exit(0)
