@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""Script that checks argument count and file existence for converting Markdown to HTML.
+"""Script that checks argument count and file existence for 
+converting Markdown to HTML.
 Exits with error codes and messages if usage is incorrect or file is missing.
 """
 import sys
