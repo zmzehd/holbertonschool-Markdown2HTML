@@ -86,7 +86,8 @@ def main():
         sys.exit(1)
 
     try:
-        with open(input_file, "r") as infile, open(output_file, "w") as outfile:
+        with open(input_file, "r") as infile, \
+            open(output_file, "w") as outfile:
 
             in_ul = False  # inside unordered list
             in_ol = False  # inside ordered list
@@ -144,7 +145,7 @@ def main():
                             break
 
                     if count <= 6 and len(stripped) > count and stripped[count] == " ":
-                        content = stripped[count + 1 :]
+                        content = stripped[count + 1:]
                         content = process_line(content)
                         outfile.write(f"<h{count}>{content}</h{count}>\n")
                     continue
