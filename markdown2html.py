@@ -87,7 +87,7 @@ def main():
 
     try:
         with open(input_file, "r") as infile, \
-            open(output_file, "w") as outfile:
+               open(output_file, "w") as outfile:
 
             in_ul = False  # inside unordered list
             in_ol = False  # inside ordered list
