@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""Script that converts Markdown headings to HTML."""
+"""
+Script that converts Markdown headings to HTML.
+"""
 import sys
 import os
 
@@ -16,7 +18,8 @@ if __name__ == "__main__":
         sys.exit(1)
 
     try:
-        with open(input_file, "r") as infile, open(output_file, "w") as outfile:
+        with open(input_file, 'r') as infile, \
+        open(output_file, 'w') as outfile:
             for line in infile:
                 line = line.strip()
                 if line.startswith("#"):
@@ -27,7 +30,7 @@ if __name__ == "__main__":
                         else:
                             break
                     if count <= 6 and len(line) > count and line[count] == " ":
-                        content = line[count + 1 :]
+                        content = line[count + 1:]
                         outfile.write(f"<h{count}>{content}</h{count}>\n")
         sys.exit(0)
     except Exception as e:
