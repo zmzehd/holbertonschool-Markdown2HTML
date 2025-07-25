@@ -146,7 +146,7 @@ def main():
 
                     if count <= 6 and \
                         len(stripped) > count and \
-                        stripped[count] == " ":
+                            stripped[count] == " ":
                         content = stripped[count + 1:]
                         content = process_line(content)
                         outfile.write(f"<h{count}>{content}</h{count}>\n")
