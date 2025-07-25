@@ -4,25 +4,15 @@ import sys
 import os
 
 if __name__ == "__main__":
-    # Check command line arguments
     if len(sys.argv) < 3:
-        print(
-    "Usage: ./markdown2html.py README.md README.html",
-    file=sys.stderr
-)
-
+        print("Usage: ./markdown2html.py README.md README.html", file=sys.stderr)
         sys.exit(1)
 
     input_file = sys.argv[1]
     output_file = sys.argv[2]
 
-    # Check if input file exists
     if not os.path.isfile(input_file):
-        print(
-    f"Missing {input_file}",
-    file=sys.stderr
-)
-
+        print(f"Missing {input_file}", file=sys.stderr)
         sys.exit(1)
 
     try:
@@ -36,9 +26,8 @@ if __name__ == "__main__":
                             count += 1
                         else:
                             break
-                    # Heading must have space after #s
                     if count <= 6 and len(line) > count and line[count] == " ":
-                        content = line[count + 1:]
+                        content = line[count + 1 :]
                         outfile.write(f"<h{count}>{content}</h{count}>\n")
         sys.exit(0)
     except Exception as e:
